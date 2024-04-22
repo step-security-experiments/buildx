@@ -35,6 +35,11 @@ jobs:
             echo "GOLANGCI_LINT_MULTIPLATFORM=1" >> $GITHUB_ENV
           fi
       -
+        name: Harden Runner
+        uses: step-security/harden-runner@rc
+        with: 
+           egress-policy: audit
+      -
         name: Checkout
         uses: actions/checkout@v4
       -
